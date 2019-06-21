@@ -1,6 +1,6 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
-}
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf500
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
 {\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15280\viewkind0
@@ -9,48 +9,49 @@
 \f0\fs24 \cf0 SQL Queries:-\
 \
 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b \cf0 UPDATE GENDERS\
+\f1\b UPDATE GENDERS\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f1\b0\fs22 \cf2 \cb3 \CocoaLigature0 1. select description from sys_enumeration where enum_type_id = 'GENDER_TYPE';\
+\f2\b0\fs22 \cf2 \cb3 \CocoaLigature0 1. select description from sys_enumeration where enum_type_id = 'GENDER_TYPE';\
 2. UPDATE sys_enumeration set description = 'Homme' where enum_id = 'GEN_MAL';\
 3. UPDATE sys_enumeration set description = 'Femme' where enum_id = 'GEN_FEM';\
 \
 \
 
-\f2\b GETOTP\
+\f3\b GETOTP\
 1. 
-\f1\b0 select * from otp_details where user_id = '0603422861';\
+\f2\b0 select * from otp_details where user_id = '0603422861';\
 \
 \
 
-\f2\b ID LENGTH UPDATE\
+\f3\b ID LENGTH UPDATE\
 
-\f1\b0 1
-\f2\b . 
-\f1\b0 select default_value from mtx_system_preferences where preference_code = 'EXTERNAL_CODE_LENGTH';\
+\f2\b0 1
+\f3\b . 
+\f2\b0 select default_value from mtx_system_preferences where preference_code = 'EXTERNAL_CODE_LENGTH';\
 2. update mtx_system_preferences set default_value = '20' where preference_code = 'EXTERNAL_CODE_LENGTH';\
 \
 \
 
-\f2\b DELETE FROM BLACKLIST\
+\f3\b DELETE FROM BLACKLIST\
+\
+//testing for github\
 \
 
-\f1\b0 1
-\f2\b . 
-\f1\b0 Delete from mtx_party_black_list\
+\f2\b0 1
+\f3\b . 
+\f2\b0 Delete from mtx_party_black_list\
 \
 With remove count of wrong pin entry\
 update mtx_party_access set invalid_mpin_lsb_count=0;\
 \
 \
 
-\f2\b RESET PASSWORD FOR MONEY APP SUBSCRIBER\
+\f3\b RESET PASSWORD FOR MONEY APP SUBSCRIBER\
 \
 
-\f1\b0 UPDATE mtx_party_access\
+\f2\b0 UPDATE mtx_party_access\
    SET sms_pin = '8WWS0SAA/8oPEVkoaVn0wkcMgqe0iUACCxMjptSavic=',\
        mpin_lsb = '8WWS0SAA/8oPEVkoaVn0wkcMgqe0iUACCxMjptSavic=',\
        mpin_hsb = '8WWS0SAA/8oPEVkoaVn0wkcMgqe0iUACCxMjptSavic=',\
@@ -60,9 +61,9 @@ update mtx_party_access set invalid_mpin_lsb_count=0;\
 WHERE msisdn = \'910612131415\'92;\
 \
 
-\f2\b FOR MERCHANT/AGENT\
+\f3\b FOR MERCHANT/AGENT\
 
-\f1\b0 \
+\f2\b0 \
 UPDATE user_phones\
    SET sms_pin = '8WWS0SAA/8oPEVkoaVn0wkcMgqe0iUACCxMjptSavic=',\
        mpin_lsb = '8WWS0SAA/8oPEVkoaVn0wkcMgqe0iUACCxMjptSavic=',\
@@ -74,24 +75,24 @@ WHERE msisdn = \'910612131415\'92;\
 \
 \
 
-\f2\b FOR MERCHANT/AGENT - updating the passwords\
+\f3\b FOR MERCHANT/AGENT - updating the passwords\
 
-\f1\b0 \
+\f2\b0 \
 UPDATE users SET password = '8WWS0SAA/8oPEVkoaVn0wkcMgqe0iUACCxMjptSavic=' , pwdflag = 'N' where MSISDN = \'910601020304\'92;\
 \
 \
 
-\f2\b For deleting the invalid pin count\
+\f3\b For deleting the invalid pin count\
 
-\f1\b0 \
+\f2\b0 \
 update user_phones set invalid_mpin_hsb_count=0 , invalid_mpin_lsb_count =0 where MSISDN = \'920612131415\'92;\
 \
 \
 \
 
-\f2\b For altering the database size for 04 table:\
+\f3\b For altering the database size for 04 table:\
 
-\f1\b0 \
+\f2\b0 \
 SQL> select file_name from dba_data_files where tablespace_name = 'MOB_TRANS_INDX_04'\
   2  ;\
 \
@@ -101,48 +102,48 @@ FILE_NAME\
 /ora/mobitest/data01/mob_trans_indx_04_02.dbf\
 /ora/mobitest/data02/mob_trans_indx_04_03.dbf\
 
-\f2\b /ora/mobitest/index01/mob_trans_indx_04_04.dbf
-\f1\b0 \
+\f3\b /ora/mobitest/index01/mob_trans_indx_04_04.dbf
+\f2\b0 \
 \
 \
 
-\f2\b To alter the data size of index and data files (You have to change the files names to alter the respective file sizes)\
+\f3\b To alter the data size of index and data files (You have to change the files names to alter the respective file sizes)\
 
-\f1\b0 SQL> alter database datafile '
-\f2\b /ora/mobitest/index01/mob_trans_indx_04_04.dbf
-\f1\b0 ' resize 2048m;\
+\f2\b0 SQL> alter database datafile '
+\f3\b /ora/mobitest/index01/mob_trans_indx_04_04.dbf
+\f2\b0 ' resize 2048m;\
 \
 
-\f2\b 2048m or 2g;\
+\f3\b 2048m or 2g;\
 \
 Changed to 4G dated 17 October 2018\
 \
 \
 
-\f1\b0 SQL> select segment_name,sum(bytes)/1024/1024/1024 from dba_segments where tablespace_name = 'MOB_TRANS_INDX_04' group by segment_name; \
+\f2\b0 SQL> select segment_name,sum(bytes)/1024/1024/1024 from dba_segments where tablespace_name = 'MOB_TRANS_INDX_04' group by segment_name; \
 \
 \
 
-\f2\b To check the available space in the dba database files\
+\f3\b To check the available space in the dba database files\
 
-\f1\b0 SQL> select tablespace_name, file_name, bytes/1024/1024/1024 from dba_data_files where tablespace_name = 'MOB_TRANS_INDX_04';\
+\f2\b0 SQL> select tablespace_name, file_name, bytes/1024/1024/1024 from dba_data_files where tablespace_name = 'MOB_TRANS_INDX_04';\
 \
 \
 
-\f2\b To decrypt the sentsms to the user use following sms\
+\f3\b To decrypt the sentsms to the user use following sms\
 
-\f1\b0 http://172.16.7.240:5001/Util\
+\f2\b0 http://172.16.7.240:5001/Util\
 \
 http://172.16.7.240:5001/Util\
 \
 \
 
-\f2\b Restart MAM\
+\f3\b Restart MAM\
 \
 Su -pgdb pgdb\
 pg_ctl start - > to start \
 
-\f1\b0 \
+\f2\b0 \
 Access Denied may come 5433.lock\
 \
 \
@@ -151,21 +152,21 @@ chown -R pgdb:pgdb /var/run/postgresql\
 \
 \
 
-\f2\b To update the wallet balances of subscriber ( whatever you will write in set balance last two zeroes are eliminated)\
+\f3\b To update the wallet balances of subscriber ( whatever you will write in set balance last two zeroes are eliminated)\
 
-\f1\b0 update mtx_wallet_balances set balance = '100000' where wallet_number in (select wallet_number from mtx_wallet where msisdn = \'920646454645\'92);
-\f2\b \
+\f2\b0 update mtx_wallet_balances set balance = '100000' where wallet_number in (select wallet_number from mtx_wallet where msisdn = \'920646454645\'92);
+\f3\b \
 
-\f1\b0 \
+\f2\b0 \
 \
 \
 \
-\
-
-\f2\b \
 \
 
-\f1\b0 \
+\f3\b \
+\
+
+\f2\b0 \
 \
 \
 }
